@@ -1,0 +1,16 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+body { @apply font-sans text-slate-800 antialiased; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition; }
+.btn-primary { @apply bg-brand text-white hover:bg-brand-dark; }
+.btn-ghost { @apply border border-slate-300 bg-white hover:bg-slate-50; }
+.input { @apply w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20; }
+@keyframes scroll-x { to { transform: translateX(-50%); } }
+.marquee { animation: scroll-x 40s linear infinite; }
+.marquee.rev { animation-direction: reverse; }
+@media (prefers-reduced-motion: reduce) { .marquee { animation: none; } }
+@media print {
+  body * { visibility: hidden; }
+  .resume-page, .resume-page * { visibility: visible; }
+  .resume-page { position: absolute; left: 0; top: 0; zoom: 1 !important; }
+  @page { size: A4; margin: 0; }
+}
